@@ -1,8 +1,8 @@
 name: Tests
 on: [push]
 jobs:
-  functionnal-tests:
-    name: Functionnal tests
+  functional-tests:
+    name: Functional tests
     runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup PHP, with composer and extensions
-        uses: shivammatur/setup-php@v2
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, xml, ctype, iconv, intl
@@ -54,4 +54,4 @@ jobs:
       - name: Run system tests
         run: php vendor/bin/simple-phpunit
       - name: Analyze coding style
-        run:  php vendor/bin/phpcs
+        run: php vendor/bin/phpcs
