@@ -20,8 +20,11 @@ class SecurityController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function registration(string $role, Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response
-    {
+    public function registration(
+        string $role,
+        Request $request,
+        UserPasswordEncoderInterface $userPasswordEncoder
+    ): Response {
         $user = Producer::ROLE === $role ? new Producer() : new Customer();
         $user->setId(Uuid::v4());
 
