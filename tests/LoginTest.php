@@ -37,5 +37,4 @@ class LoginTest extends WebTestCase
         yield ['producer@email.com'];
         yield ['customer@email.com'];
     }
-
 }

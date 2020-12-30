@@ -108,6 +108,4 @@ class WebAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
-
-
 }
